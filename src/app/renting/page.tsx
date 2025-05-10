@@ -1,11 +1,23 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 import { Metadata } from 'next';
 import { Button } from '~/components/ui/button';
 import { Testimonial } from '~/components/testimonial';
 import { Pricing } from '~/components/pricing';
 import { Faq } from '~/components/faq';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import { Home, RefrigeratorIcon, Car, Sun, Shield, Sofa } from 'lucide-react';
+import {
+  Home,
+  RefrigeratorIcon,
+  Car,
+  Sun,
+  Shield,
+  Sofa,
+  CreditCard,
+  Image as ImageIcon,
+  Phone,
+} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Rental Property | Your Business Name',
@@ -52,8 +64,7 @@ export default function Renting() {
   ];
 
   return (
-    <main className='min-h-screen mt-[40px]'>
-      {/* Hero Section */}
+    <main className='min-h-screen flex flex-col gap-10 mt-[50px]'>
       <section className='relative h-[70vh] w-full'>
         <div className='absolute inset-0 bg-black/40 z-10' />
         <Image
@@ -69,20 +80,22 @@ export default function Renting() {
           </h1>
           <p className='text-xl text-white/90 max-w-2xl mb-6 font-roboto font-light'>
             Kost eksklusif dengan fasilitas lengkap dan lingkungan yang nyaman.
-            Lokasi strategis, keamanan 24 jam, dan suasana yang tenang
-            menjadikan Pondok Kang Dilla pilihan tepat untuk tempat tinggal
-            Anda.
           </p>
-          <p className='text-3xl text-white font-medium font-roboto'>
+          <p className='text-3xl text-white font-medium font-roboto mb-6'>
             Mulai dari 1 jutaan/bulan
           </p>
+          <a 
+            href='https://wa.me/628156002421?text=Halo%2C%20saya%20akan%20booking%2Fsurvey%20kost.%20Apakah%20masih%20tersedia%3F'
+            target='_blank'
+            className='bg-white hover:bg-white/90 text-primary font-medium py-3 px-6 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center gap-2 font-roboto'
+          >
+            <Phone className='h-5 w-5' /> Booking Sekarang
+          </a>
         </div>
       </section>
-
-      {/* Property Features */}
-      <section className='py-16 bg-gray-50'>
+      <section className='py-16'>
         <div className='container mx-auto px-4'>
-          <h2 className='text-3xl font-bold mb-12 text-center font-roboto'>
+          <h2 className='text-4xl font-bold mb-12 text-center font-roboto'>
             Fasilitas Pondok Kang Dilla
           </h2>
           <div className='grid md:grid-cols-3 gap-8'>
@@ -94,7 +107,9 @@ export default function Renting() {
                     <div className='p-2 bg-primary/10 rounded-lg'>
                       <IconComponent className='h-6 w-6 text-primary' />
                     </div>
-                    <CardTitle className="font-roboto">{facility.title}</CardTitle>
+                    <CardTitle className='font-roboto'>
+                      {facility.title}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className='text-muted-foreground font-roboto font-light'>
@@ -107,35 +122,34 @@ export default function Renting() {
           </div>
         </div>
       </section>
-
-      {/* FAQ */}
-      <section className='flex flex-col gap-2'>
-        <h2 className='text-3xl font-bold mb-12 text-center font-roboto'>
-          FAQ (Frequently Asked Question)
-        </h2>
-        <div className='w-full flex flex-col sm:flex-row justify-center gap-0 sm:gap-[20px]'>
-          <Faq />
-        </div>
-      </section>
-
-      {/* Testimonial */}
       <Testimonial />
+      <section className='flex flex-col gap-2'>
+        <Faq />
+      </section>
 
-      {/* Pricing */}
-      <Pricing />
-
-      {/* Booking CTA */}
-      <section className='bg-gray-900 py-16'>
+      {/* Payment Information Link Section */}
+      <section className='py-16'>
         <div className='container mx-auto px-4 text-center'>
-          <h2 className='text-3xl font-bold mb-6 font-roboto'>Ready to Book Your Stay?</h2>
-          <p className='mb-8 text-gray-300 font-roboto font-light'>
-            Contact us now to check availability and make your reservation
+          <h2 className='text-3xl font-bold mb-6 font-roboto'>
+            Informasi Pembayaran
+          </h2>
+          <p className='text-lg text-muted-foreground mb-8 font-roboto font-light max-w-2xl mx-auto'>
+            Silakan cek informasi lengkap tentang cara pembayaran, harga kamar,
+            dan kontak untuk survey lokasi Pondok Kang Dilla.
           </p>
-          <Button className='cursor-pointer text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors'>
-            Book Now
-          </Button>
+          <Link
+            href='/renting/payment'
+            className='flex justify-center'
+            passHref
+          >
+            <Button className='font-roboto flex cursor-pointer items-center gap-2'>
+              <CreditCard className='h-4 w-4' /> Lihat Informasi Pembayaran
+            </Button>
+          </Link>
         </div>
       </section>
+
+      <Pricing />
     </main>
   );
 }

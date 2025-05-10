@@ -1,57 +1,56 @@
+'use client';
+
 import { Button } from '~/components/ui/button';
 import { Separator } from '~/components/ui/separator';
-import { CircleCheck } from 'lucide-react';
+import { CircleCheck, Phone } from 'lucide-react';
+import { cn } from '~/lib/utils';
 
 const plans = [
   {
-    name: 'Starter',
-    price: 19,
+    name: 'Pasutri',
+    price: '1.500.000',
+    normal_price: '2.000.000',
     description:
-      'Get 20 AI-generated portraits with 2 unique styles and filters.',
+      'Kamar bersih dan nyaman khusus pasutri tersedia di lantai bawah dan atas, dapatkan sekarang!',
     features: [
-      '5 hours turnaround time',
-      '20 AI portraits',
-      'Choice of 2 styles',
-      'Choice of 2 filters',
-      '2 retouch credits',
+      'Khusus pasutri sah',
+      'Tidak membawa anak kecil',
+      'Bukti surat nikah',
     ],
-    buttonText: 'Get 20 portraits in 5 hours',
+    buttonText: 'Booking Sekarang',
+    is_promo: true,
   },
   {
-    name: 'Advanced',
-    price: 29,
+    name: 'Promo Karyawan/Mahasiswa',
+    price: '1.250.000',
+    normal_price: '1.400.000',
     isRecommended: true,
     description:
-      'Get 50 AI-generated portraits with 5 unique styles and filters.',
+      'Dapatkan kamar dengan harga terjangkau dengan diskon khusus karyawan/mahasiswa',
     features: [
-      '3 hours turnaround time',
-      '50 AI portraits',
-      'Choice of 5 styles',
-      'Choice of 5 filters',
-      '5 retouch credits',
+      'Kamar khusus penyewa',
+      'Lawan jenis dilarang masuk kamar',
+      'Jam malam untuk tamu',
     ],
-    buttonText: 'Get 50 portraits in 3 hours',
+    buttonText: 'Booking Sekarang',
     isPopular: true,
+    is_promo: true,
   },
   {
-    name: 'Premium',
-    price: 49,
+    name: 'Diskon Akhir Tahun',
+    price: '0',
+    normal_price: '0',
     description:
-      'Get 100 AI-generated portraits with 10 unique styles and filters.',
-    features: [
-      '1-hour turnaround time',
-      '100 AI portraits',
-      'Choice of 10 styles',
-      'Choice of 10 filters',
-      '10 retouch credits',
-    ],
+      'Diskon sementara tidak aktif, silahkan cek secara berkala setiap bulan untuk dapatkan cashback 30%',
+    features: ['Promo akhir tahun', 'Khusus mahasiswa/karyawan', 'Diskon 50%'],
     buttonText: 'Get 100 portraits in 1 hour',
+    is_promo: false,
   },
 ];
 
 export function Pricing() {
   return (
-    <div className='min-h-screen flex flex-col items-center justify-center py-12 px-6'>
+    <div className='flex flex-col items-center justify-center pt-2 pb-8 px-6'>
       <h1 className='text-5xl font-bold text-center tracking-tight font-roboto'>
         Harga & Promo
       </h1>
@@ -59,14 +58,22 @@ export function Pricing() {
         {plans.map((plan) => (
           <div key={plan.name} className='border rounded-lg p-6'>
             <h3 className='text-lg font-medium font-roboto'>{plan.name}</h3>
-            <p className='mt-2 text-4xl font-bold font-roboto'>${plan.price}</p>
-            <p className='mt-4 font-medium text-muted-foreground font-roboto font-light'>
+            <p className='mt-2 text-2xl line-through font-bold font-roboto'>
+              Rp {plan.normal_price}
+            </p>
+            <p className='mt-2 text-4xl font-bold font-roboto'>
+              Rp {plan.price}
+            </p>
+            <p className='mt-4  text-muted-foreground font-roboto font-light'>
               {plan.description}
             </p>
             <Separator className='my-4' />
             <ul className='space-y-2'>
               {plan.features.map((feature) => (
-                <li key={feature} className='flex items-start gap-2 font-roboto'>
+                <li
+                  key={feature}
+                  className='flex items-start gap-2 font-roboto'
+                >
                   <CircleCheck className='h-4 w-4 mt-1 text-green-600' />{' '}
                   {feature}
                 </li>
@@ -75,9 +82,11 @@ export function Pricing() {
             <Button
               variant={plan.isPopular ? 'default' : 'outline'}
               size='lg'
-              className='w-full mt-6 font-roboto'
+              className={cn('w-full mt-6 font-roboto', {})}
+              disabled={!plan.is_promo}
+              onClick={() => plan.is_promo && window.open('https://wa.me/628156002421?text=Halo%2C%20saya%20akan%20booking%2Fsurvey%20kost.%20Apakah%20masih%20tersedia%3F', '_blank')}
             >
-              {plan.buttonText}
+              {plan.is_promo ? plan.buttonText : 'Diskon Kadaluarsa'}
             </Button>
           </div>
         ))}

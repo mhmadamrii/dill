@@ -59,10 +59,10 @@ const testimonials = [
 
 export function Testimonial() {
   return (
-    <div className='min-h-screen flex justify-center items-center py-12 px-6'>
+    <div className='flex justify-center items-center py-2 px-6'>
       <div>
-        <h2 className='mb-8 sm:mb-14 text-5xl md:text-6xl font-bold text-center tracking-tight font-roboto'>
-          Testimonials
+        <h2 className='mb-8 text-4xl font-bold text-center tracking-tight font-roboto'>
+          Testimoni
         </h2>
         <div className='w-full max-w-screen-xl mx-auto'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-hidden border-r border-background'>
@@ -88,7 +88,9 @@ export function Testimonial() {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className='text-lg font-medium font-roboto'>{testimonial.name}</p>
+                    <p className='text-lg font-medium font-roboto'>
+                      {testimonial.name}
+                    </p>
                     <p className='text-sm text-gray-500 font-roboto'>
                       {testimonial.designation}
                     </p>

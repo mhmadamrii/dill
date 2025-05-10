@@ -1,5 +1,8 @@
+import Link from 'next/link';
+
 import { Metadata } from 'next';
-import { ThemeToggle } from '~/components/theme-toggle';
+import { Footer } from '~/components/footer';
+import { DialogMessage } from '~/components/dialog-message';
 
 export const metadata: Metadata = {
   title: 'Rental Property',
@@ -16,70 +19,40 @@ export default function RentingLayout({
       <nav className='fixed top-0 w-full flex gap-2 items-center z-50 bg-white/80 backdrop-blur-sm shadow-sm'>
         <div className='container mx-auto px-4 py-4 flex items-center gap-1.5 justify-between'>
           <div className='flex w-full items-center justify-between'>
-            <a href='/' className='text-xl font-bold'>
-              Kang Dilla
-            </a>
-            <div className='flex gap-6'>
-              <a href='/renting' className='hover:text-gray-600'>
-                Property
-              </a>
-              <a href='/renting/gallery' className='hover:text-gray-600'>
+            <Link
+              href='/renting'
+              className='text-xl flex items-center gap-1 font-bold'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='25'
+                height='25'
+                fill='none'
+                viewBox='0 0 24 24'
+              >
+                <path
+                  stroke='#000'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M19 9.778V16.2c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311 2.3 2.3 0 0 1-.494.18M5 9.778V16.2c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311q.224.115.494.18M21 12l-5.433-6.036c-1.236-1.373-1.854-2.06-2.581-2.313a3 3 0 0 0-1.974 0c-.728.254-1.345.94-2.58 2.313L3 12m4.132 8.854a5.002 5.002 0 0 1 9.736 0m-9.736 0C7.722 21 8.515 21 9.8 21h4.4c1.285 0 2.079 0 2.668-.146M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0'
+                ></path>
+              </svg>
+              <span>Kang Dilla</span>
+            </Link>
+            <div className='flex items-center gap-6'>
+              <Link href='/renting/gallery' className='hover:underline'>
                 Gallery
-              </a>
-              <a href='/renting/booking' className='hover:text-gray-600'>
-                Book Now
-              </a>
-              <a href='/renting/contact' className='hover:text-gray-600'>
-                Contact
-              </a>
+              </Link>
+              <Link href='/renting/payment' className='hover:underline'>
+                Pembayaran
+              </Link>
             </div>
           </div>
-          <ThemeToggle />
         </div>
       </nav>
       {children}
-      <footer className='bg-gray-900 text-white py-8'>
-        <div className='container mx-auto px-4'>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            <div>
-              <h3 className='text-lg font-semibold mb-4'>Contact Us</h3>
-              <p>Email: contact@yourbrand.com</p>
-              <p>Phone: +1 (123) 456-7890</p>
-            </div>
-            <div>
-              <h3 className='text-lg font-semibold mb-4'>Quick Links</h3>
-              <ul className='space-y-2'>
-                <li>
-                  <a href='/renting' className='hover:text-gray-300'>
-                    Property
-                  </a>
-                </li>
-                <li>
-                  <a href='/renting/gallery' className='hover:text-gray-300'>
-                    Gallery
-                  </a>
-                </li>
-                <li>
-                  <a href='/renting/booking' className='hover:text-gray-300'>
-                    Book Now
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className='text-lg font-semibold mb-4'>Location</h3>
-              <p>123 Property Street</p>
-              <p>City, State 12345</p>
-              <p>Country</p>
-            </div>
-          </div>
-          <div className='mt-8 pt-8 border-t border-gray-800 text-center'>
-            <p>
-              &copy; {new Date().getFullYear()} Your Brand. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
