@@ -1,5 +1,11 @@
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { Button } from '~/components/ui/button';
+import { Testimonial } from '~/components/testimonial';
+import { Pricing } from '~/components/pricing';
+import { Faq } from '~/components/faq';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
+import { Home, RefrigeratorIcon, Car, Sun, Shield, Sofa } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Rental Property | Your Business Name',
@@ -7,49 +13,51 @@ export const metadata: Metadata = {
     'Discover our beautiful rental property with modern amenities and stunning views.',
 };
 
-const RentalPropertyPage = () => {
-  // Mock data - replace with your actual property data
-  const propertyDetails = {
-    name: 'Luxury Villa',
-    description:
-      'A stunning modern villa with panoramic views, perfect for your next getaway.',
-    price: '$200/night',
-    bedrooms: 3,
-    bathrooms: 2,
-    maxGuests: 6,
-    amenities: [
-      'Free WiFi',
-      'Swimming Pool',
-      'Air Conditioning',
-      'Fully Equipped Kitchen',
-      'Private Parking',
-      'Smart TV',
-      'Garden',
-      'BBQ Area',
-    ],
-    features: [
-      {
-        title: 'Spacious Living',
-        description: 'Open-concept living area with contemporary furnishings',
-      },
-      {
-        title: 'Modern Kitchen',
-        description: 'State-of-the-art appliances and cooking essentials',
-      },
-      {
-        title: 'Outdoor Space',
-        description: 'Private garden with lounging and dining areas',
-      },
-    ],
-  };
+export default function Renting() {
+  const facilities = [
+    {
+      title: 'Ruang Kost yang Bersih',
+      description:
+        'Kamar kost yang selalu terjaga kebersihannya untuk kenyamanan penghuni',
+      icon: Home,
+    },
+    {
+      title: 'Kulkas Bersama',
+      description:
+        'Tersedia kulkas bersama untuk menyimpan bahan makanan dengan aman',
+      icon: RefrigeratorIcon,
+    },
+    {
+      title: 'Garasi Yang Aman',
+      description: 'Garasi yang aman dan terlindungi untuk kendaraan Anda',
+      icon: Car,
+    },
+    {
+      title: 'Jemuran',
+      description: 'Area jemuran yang luas untuk mengeringkan pakaian',
+      icon: Sun,
+    },
+    {
+      title: 'Penjaga Kostan',
+      description:
+        'Penjaga kost yang siap membantu 24/7 untuk keamanan dan kenyamanan',
+      icon: Shield,
+    },
+    {
+      title: 'Ruang Santai',
+      description:
+        'Ruang bersama yang nyaman untuk bersantai dan bersosialisasi',
+      icon: Sofa,
+    },
+  ];
 
   return (
-    <main className='min-h-screen'>
+    <main className='min-h-screen mt-[40px]'>
       {/* Hero Section */}
       <section className='relative h-[70vh] w-full'>
         <div className='absolute inset-0 bg-black/40 z-10' />
         <Image
-          src='/placeholder-house.jpg'
+          src='/kangdilla.jpeg'
           alt='Luxury Villa Exterior'
           fill
           className='object-cover'
@@ -57,34 +65,17 @@ const RentalPropertyPage = () => {
         />
         <div className='relative z-20 container mx-auto h-full flex flex-col justify-center items-start px-4'>
           <h1 className='text-4xl md:text-6xl text-white font-bold mb-4'>
-            {propertyDetails.name}
+            Pondok Kang Dilla
           </h1>
           <p className='text-xl text-white/90 max-w-2xl mb-6'>
-            {propertyDetails.description}
+            Kost eksklusif dengan fasilitas lengkap dan lingkungan yang nyaman.
+            Lokasi strategis, keamanan 24 jam, dan suasana yang tenang
+            menjadikan Pondok Kang Dilla pilihan tepat untuk tempat tinggal
+            Anda.
           </p>
           <p className='text-3xl text-white font-semibold'>
-            {propertyDetails.price}
+            Mulai dari 1 jutaan/bulan
           </p>
-        </div>
-      </section>
-
-      {/* Quick Info */}
-      <section className='bg-white py-8 border-b'>
-        <div className='container mx-auto px-4'>
-          <div className='flex flex-wrap justify-center gap-8 text-center'>
-            <div className='flex items-center gap-2'>
-              <span className='text-xl'>🛏️</span>
-              <p>{propertyDetails.bedrooms} Bedrooms</p>
-            </div>
-            <div className='flex items-center gap-2'>
-              <span className='text-xl'>🚿</span>
-              <p>{propertyDetails.bathrooms} Bathrooms</p>
-            </div>
-            <div className='flex items-center gap-2'>
-              <span className='text-xl'>👥</span>
-              <p>Up to {propertyDetails.maxGuests} Guests</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -92,51 +83,59 @@ const RentalPropertyPage = () => {
       <section className='py-16 bg-gray-50'>
         <div className='container mx-auto px-4'>
           <h2 className='text-3xl font-bold mb-12 text-center'>
-            Property Features
+            Fasilitas Pondok Kang Dilla
           </h2>
           <div className='grid md:grid-cols-3 gap-8'>
-            {propertyDetails.features.map((feature, index) => (
-              <div key={index} className='bg-white p-6 rounded-lg shadow-sm'>
-                <h3 className='text-xl font-semibold mb-3'>{feature.title}</h3>
-                <p className='text-gray-600'>{feature.description}</p>
-              </div>
-            ))}
+            {facilities.map((facility, index) => {
+              const IconComponent = facility.icon;
+              return (
+                <Card key={index}>
+                  <CardHeader className='flex flex-row items-center gap-4'>
+                    <div className='p-2 bg-primary/10 rounded-lg'>
+                      <IconComponent className='h-6 w-6 text-primary' />
+                    </div>
+                    <CardTitle>{facility.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className='text-muted-foreground'>
+                      {facility.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Amenities */}
-      <section className='py-16'>
-        <div className='container mx-auto px-4'>
-          <h2 className='text-3xl font-bold mb-12 text-center'>Amenities</h2>
-          <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-            {propertyDetails.amenities.map((amenity, index) => (
-              <div
-                key={index}
-                className='flex items-center gap-2 p-4 bg-gray-50 rounded'
-              >
-                <span className='text-green-500'>✓</span>
-                <span>{amenity}</span>
-              </div>
-            ))}
-          </div>
+      {/* FAQ */}
+      <section className='flex flex-col gap-2'>
+        <h2 className='text-3xl font-bold mb-12 text-center'>
+          FAQ (Frequently Asked Question)
+        </h2>
+        <div className='w-full flex flex-col sm:flex-row justify-center gap-0 sm:gap-[20px]'>
+          <Faq />
         </div>
       </section>
+
+      {/* Testimonial */}
+      <Testimonial />
+
+      {/* Pricing */}
+      <Pricing />
 
       {/* Booking CTA */}
-      <section className='bg-gray-900 text-white py-16'>
+      <section className='bg-gray-900 py-16'>
         <div className='container mx-auto px-4 text-center'>
           <h2 className='text-3xl font-bold mb-6'>Ready to Book Your Stay?</h2>
           <p className='mb-8 text-gray-300'>
             Contact us now to check availability and make your reservation
           </p>
-          <button className='bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors'>
+          <Button className='cursor-pointer text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors'>
             Book Now
-          </button>
+          </Button>
         </div>
       </section>
     </main>
   );
-};
-
-export default RentalPropertyPage;
+}

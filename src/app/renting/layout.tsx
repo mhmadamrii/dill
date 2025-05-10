@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { ThemeToggle } from '~/components/theme-toggle';
 
 export const metadata: Metadata = {
   title: 'Rental Property',
@@ -12,9 +13,9 @@ export default function RentingLayout({
 }) {
   return (
     <div className='min-h-screen bg-white'>
-      <nav className='bg-white shadow-sm'>
-        <div className='container mx-auto px-4 py-4'>
-          <div className='flex items-center justify-between'>
+      <nav className='fixed top-0 w-full flex gap-2 items-center z-50 bg-white/80 backdrop-blur-sm shadow-sm'>
+        <div className='container mx-auto px-4 py-4 flex items-center gap-1.5 justify-between'>
+          <div className='flex w-full items-center justify-between'>
             <a href='/' className='text-xl font-bold'>
               Kang Dilla
             </a>
@@ -33,6 +34,7 @@ export default function RentingLayout({
               </a>
             </div>
           </div>
+          <ThemeToggle />
         </div>
       </nav>
       {children}
