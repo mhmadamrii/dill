@@ -61,7 +61,7 @@ export function Testimonial() {
   return (
     <div className='min-h-screen flex justify-center items-center py-12 px-6'>
       <div>
-        <h2 className='mb-8 sm:mb-14 text-5xl md:text-6xl font-bold text-center tracking-tight'>
+        <h2 className='mb-8 sm:mb-14 text-5xl md:text-6xl font-bold text-center tracking-tight font-roboto'>
           Testimonials
         </h2>
         <div className='w-full max-w-screen-xl mx-auto'>
@@ -78,7 +78,7 @@ export function Testimonial() {
                   <StarIcon className='w-6 h-6 fill-yellow-500 stroke-yellow-500' />
                   <StarIcon className='w-6 h-6 fill-yellow-500 stroke-yellow-500' />
                 </div>
-                <p className='my-6 text-[17px] text-center max-w-md'>
+                <p className='my-6 text-[17px] text-center max-w-md font-roboto font-light'>
                   &quot;{testimonial.testimonial}&quot;
                 </p>
                 <div className='mt-auto flex items-center justify-center gap-3'>
@@ -88,8 +88,8 @@ export function Testimonial() {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className='text-lg font-semibold'>{testimonial.name}</p>
-                    <p className='text-sm text-gray-500'>
+                    <p className='text-lg font-medium font-roboto'>{testimonial.name}</p>
+                    <p className='text-sm text-gray-500 font-roboto'>
                       {testimonial.designation}
                     </p>
                   </div>

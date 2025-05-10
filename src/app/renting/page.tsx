@@ -64,16 +64,16 @@ export default function Renting() {
           priority
         />
         <div className='relative z-20 container mx-auto h-full flex flex-col justify-center items-start px-4'>
-          <h1 className='text-4xl md:text-6xl text-white font-bold mb-4'>
+          <h1 className='text-4xl md:text-6xl text-white font-bold mb-4 font-roboto'>
             Pondok Kang Dilla
           </h1>
-          <p className='text-xl text-white/90 max-w-2xl mb-6'>
+          <p className='text-xl text-white/90 max-w-2xl mb-6 font-roboto font-light'>
             Kost eksklusif dengan fasilitas lengkap dan lingkungan yang nyaman.
             Lokasi strategis, keamanan 24 jam, dan suasana yang tenang
             menjadikan Pondok Kang Dilla pilihan tepat untuk tempat tinggal
             Anda.
           </p>
-          <p className='text-3xl text-white font-semibold'>
+          <p className='text-3xl text-white font-medium font-roboto'>
             Mulai dari 1 jutaan/bulan
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function Renting() {
       {/* Property Features */}
       <section className='py-16 bg-gray-50'>
         <div className='container mx-auto px-4'>
-          <h2 className='text-3xl font-bold mb-12 text-center'>
+          <h2 className='text-3xl font-bold mb-12 text-center font-roboto'>
             Fasilitas Pondok Kang Dilla
           </h2>
           <div className='grid md:grid-cols-3 gap-8'>
@@ -94,10 +94,10 @@ export default function Renting() {
                     <div className='p-2 bg-primary/10 rounded-lg'>
                       <IconComponent className='h-6 w-6 text-primary' />
                     </div>
-                    <CardTitle>{facility.title}</CardTitle>
+                    <CardTitle className="font-roboto">{facility.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className='text-muted-foreground'>
+                    <p className='text-muted-foreground font-roboto font-light'>
                       {facility.description}
                     </p>
                   </CardContent>
@@ -110,7 +110,7 @@ export default function Renting() {
 
       {/* FAQ */}
       <section className='flex flex-col gap-2'>
-        <h2 className='text-3xl font-bold mb-12 text-center'>
+        <h2 className='text-3xl font-bold mb-12 text-center font-roboto'>
           FAQ (Frequently Asked Question)
         </h2>
         <div className='w-full flex flex-col sm:flex-row justify-center gap-0 sm:gap-[20px]'>
@@ -127,8 +127,8 @@ export default function Renting() {
       {/* Booking CTA */}
       <section className='bg-gray-900 py-16'>
         <div className='container mx-auto px-4 text-center'>
-          <h2 className='text-3xl font-bold mb-6'>Ready to Book Your Stay?</h2>
-          <p className='mb-8 text-gray-300'>
+          <h2 className='text-3xl font-bold mb-6 font-roboto'>Ready to Book Your Stay?</h2>
+          <p className='mb-8 text-gray-300 font-roboto font-light'>
             Contact us now to check availability and make your reservation
           </p>
           <Button className='cursor-pointer text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors'>

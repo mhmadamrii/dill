@@ -52,21 +52,21 @@ const plans = [
 export function Pricing() {
   return (
     <div className='min-h-screen flex flex-col items-center justify-center py-12 px-6'>
-      <h1 className='text-5xl font-bold text-center tracking-tight'>
+      <h1 className='text-5xl font-bold text-center tracking-tight font-roboto'>
         Harga & Promo
       </h1>
       <div className='mt-12 max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8'>
         {plans.map((plan) => (
           <div key={plan.name} className='border rounded-lg p-6'>
-            <h3 className='text-lg font-medium'>{plan.name}</h3>
-            <p className='mt-2 text-4xl font-bold'>${plan.price}</p>
-            <p className='mt-4 font-medium text-muted-foreground'>
+            <h3 className='text-lg font-medium font-roboto'>{plan.name}</h3>
+            <p className='mt-2 text-4xl font-bold font-roboto'>${plan.price}</p>
+            <p className='mt-4 font-medium text-muted-foreground font-roboto font-light'>
               {plan.description}
             </p>
             <Separator className='my-4' />
             <ul className='space-y-2'>
               {plan.features.map((feature) => (
-                <li key={feature} className='flex items-start gap-2'>
+                <li key={feature} className='flex items-start gap-2 font-roboto'>
                   <CircleCheck className='h-4 w-4 mt-1 text-green-600' />{' '}
                   {feature}
                 </li>
@@ -75,7 +75,7 @@ export function Pricing() {
             <Button
               variant={plan.isPopular ? 'default' : 'outline'}
               size='lg'
-              className='w-full mt-6'
+              className='w-full mt-6 font-roboto'
             >
               {plan.buttonText}
             </Button>

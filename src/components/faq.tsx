@@ -32,17 +32,19 @@ export function Faq() {
       defaultValue='item-0'
       type='single'
       collapsible
-      className='my-4 sm:w-[80%] w-full'
+      className='my-4 sm:w-[80%] w-full font-roboto'
     >
       {items.map(({ title, content, icon: Icon }, index) => (
         <AccordionItem key={index} value={`item-${index}`}>
           <AccordionTrigger>
             <div className='flex items-start gap-3'>
-              <Icon />
-              {title}
+              <Icon className="h-5 w-5" />
+              <span className="font-medium">{title}</span>
             </div>
           </AccordionTrigger>
-          <AccordionContent>{content}</AccordionContent>
+          <AccordionContent>
+            <p className="font-light text-muted-foreground">{content}</p>
+          </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
