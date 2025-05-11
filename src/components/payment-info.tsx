@@ -1,6 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
+import { Button } from '~/components/ui/button';
+import { Separator } from '~/components/ui/separator';
 import {
   MapPin,
   Phone,
@@ -10,9 +13,6 @@ import {
   Home,
   ExternalLink,
 } from 'lucide-react';
-import { Button } from '~/components/ui/button';
-import { Separator } from '~/components/ui/separator';
-import Link from 'next/link';
 
 export function PaymentInfo() {
   return (
@@ -44,7 +44,8 @@ export function PaymentInfo() {
                     className='text-primary hover:underline transition-colors duration-300 inline-flex items-center'
                     target='_blank'
                   >
-                    +628156002421 (Dedi Suhedi) <ExternalLink className='ml-1 h-3 w-3' />
+                    +628156002421 <ExternalLink className='mr-1 h-3 w-3' />{' '}
+                    <span> (Dedi Suhedi S.H, pemilik kost)</span>
                   </Link>
                 </p>
               </div>

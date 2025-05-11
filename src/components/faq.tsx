@@ -93,8 +93,8 @@ export function Faq() {
   const [value, setValue] = useState<string>();
 
   return (
-    <div className='flex items-center justify-center px-6 py-12 bg-gradient-to-br from-primary/5 via-white to-primary/5'>
-      <div className='w-full max-w-screen-lg'>
+    <div className='flex items-center flex-1 justify-center h-full px-6 py-12 bg-gradient-to-br from-primary/5 via-white to-primary/5'>
+      <div className='w-full h-full max-w-screen-lg'>
         <h2 className='text-4xl font-bold tracking-tight text-center font-roboto mb-12'>
           FAQ
         </h2>

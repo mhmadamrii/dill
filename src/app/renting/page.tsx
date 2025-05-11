@@ -17,6 +17,7 @@ import {
   CreditCard,
   Image as ImageIcon,
   Phone,
+  MapPin,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -64,7 +65,7 @@ export default function Renting() {
   ];
 
   return (
-    <main className='min-h-screen flex flex-col gap-10 mt-[50px]'>
+    <main className='min-h-screen flex flex-col mt-[50px]'>
       <section className='relative h-[70vh] w-full'>
         <div className='absolute inset-0 bg-black/40 z-10' />
         <Image
@@ -84,7 +85,7 @@ export default function Renting() {
           <p className='text-3xl text-white font-medium font-roboto mb-6'>
             Mulai dari 1 jutaan/bulan
           </p>
-          <a 
+          <a
             href='https://wa.me/628156002421?text=Halo%2C%20saya%20akan%20booking%2Fsurvey%20kost.%20Apakah%20masih%20tersedia%3F'
             target='_blank'
             className='bg-white hover:bg-white/90 text-primary font-medium py-3 px-6 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center gap-2 font-roboto'
@@ -93,7 +94,7 @@ export default function Renting() {
           </a>
         </div>
       </section>
-      <section className='py-16'>
+      <section className='flex items-center h-[650px]'>
         <div className='container mx-auto px-4'>
           <h2 className='text-4xl font-bold mb-12 text-center font-roboto'>
             Fasilitas Pondok Kang Dilla
@@ -123,12 +124,11 @@ export default function Renting() {
         </div>
       </section>
       <Testimonial />
-      <section className='flex flex-col gap-2'>
+      <section className='flex min-h-[650px] flex-col gap-2'>
         <Faq />
       </section>
-
-      {/* Payment Information Link Section */}
-      <section className='py-16'>
+      <Pricing />
+      <section className='py-16 h-[400px] flex items-center'>
         <div className='container mx-auto px-4 text-center'>
           <h2 className='text-3xl font-bold mb-6 font-roboto'>
             Informasi Pembayaran
@@ -148,8 +148,29 @@ export default function Renting() {
           </Link>
         </div>
       </section>
-
-      <Pricing />
+      <div className='w-full sm:max-w-7xl mx-auto mb-8'>
+        <h2 className='text-2xl font-bold mb-6 font-roboto flex items-center gap-2'>
+          <MapPin className='h-5 w-5 text-primary' />
+          Lokasi Pondok Kang Dilla
+        </h2>
+        <div className='w-full rounded-lg overflow-hidden shadow-lg border border-gray-200'>
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.634900915547!2d107.65114597468748!3d-6.934236693067444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9bfc6f18c0b%3A0x889af95327e0b484!2sPondok%20Kang%20Dilla!5e0!3m2!1sen!2sid!4v1694518946789!5m2!1sen!2sid'
+            width='100%'
+            height='450'
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading='lazy'
+            referrerPolicy='no-referrer-when-downgrade'
+            className='hover:opacity-95 transition-opacity duration-300'
+            title='Lokasi Pondok Kang Dilla di Google Maps'
+          ></iframe>
+        </div>
+        <p className='text-sm text-muted-foreground mt-3 font-roboto font-light text-center'>
+          Jl. Sukamanah baru no.7 (cibalagung) RT.005/013 sukapura kiaracondong,
+          Bandung
+        </p>
+      </div>
     </main>
   );
 }

@@ -38,7 +38,7 @@ export default function RentingLayout({
                   d='M19 9.778V16.2c0 1.68 0 2.52-.327 3.162a3 3 0 0 1-1.311 1.311 2.3 2.3 0 0 1-.494.18M5 9.778V16.2c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311q.224.115.494.18M21 12l-5.433-6.036c-1.236-1.373-1.854-2.06-2.581-2.313a3 3 0 0 0-1.974 0c-.728.254-1.345.94-2.58 2.313L3 12m4.132 8.854a5.002 5.002 0 0 1 9.736 0m-9.736 0C7.722 21 8.515 21 9.8 21h4.4c1.285 0 2.079 0 2.668-.146M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0'
                 ></path>
               </svg>
-              <span>Kang Dilla</span>
+              <span>Pondok Kang Dilla</span>
             </Link>
             <div className='flex items-center gap-6'>
               <Link href='/renting/gallery' className='hover:underline'>

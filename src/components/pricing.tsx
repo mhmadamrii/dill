@@ -4,6 +4,7 @@ import { Button } from '~/components/ui/button';
 import { Separator } from '~/components/ui/separator';
 import { CircleCheck, Phone } from 'lucide-react';
 import { cn } from '~/lib/utils';
+import { PulsatingButton } from './magicui/pulsating-button';
 
 const plans = [
   {
@@ -50,7 +51,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <div className='flex flex-col items-center justify-center pt-2 pb-8 px-6'>
+    <div className='flex flex-col items-center justify-center h-[700px]'>
       <h1 className='text-5xl font-bold text-center tracking-tight font-roboto'>
         Harga & Promo
       </h1>
@@ -84,7 +85,13 @@ export function Pricing() {
               size='lg'
               className={cn('w-full mt-6 font-roboto', {})}
               disabled={!plan.is_promo}
-              onClick={() => plan.is_promo && window.open('https://wa.me/628156002421?text=Halo%2C%20saya%20akan%20booking%2Fsurvey%20kost.%20Apakah%20masih%20tersedia%3F', '_blank')}
+              onClick={() =>
+                plan.is_promo &&
+                window.open(
+                  'https://wa.me/628156002421?text=Halo%2C%20saya%20akan%20booking%2Fsurvey%20kost.%20Apakah%20masih%20tersedia%3F',
+                  '_blank',
+                )
+              }
             >
               {plan.is_promo ? plan.buttonText : 'Diskon Kadaluarsa'}
             </Button>
