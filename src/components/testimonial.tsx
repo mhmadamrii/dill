@@ -16,7 +16,7 @@ const testimonials = [
     designation: 'Karyawan Swasta',
     company: 'Bank BCA',
     testimonial:
-      'Lingkungan kost tenang dan aman. Ibu kostnya ramah dan selalu responsive kalau ada masalah. Worth it dengan harganya!',
+      'Lingkungan kost tenang dan aman. Penjaga kostnya ramah dan selalu responsive kalau ada masalah. Worth it dengan harganya!',
     avatar: 'https://randomuser.me/api/portraits/women/6.jpg',
   },
   {
@@ -25,13 +25,13 @@ const testimonials = [
     designation: 'Fresh Graduate',
     company: 'Startup Tech',
     testimonial:
-      'Kamar luas dan ada AC-nya. Dekat dengan minimarket dan warung makan. Parkiran motor juga luas dan tertutup.',
+      'Kamar luas dan bersih. Dekat dengan minimarket dan warung makan. Parkiran motor juga luas dan tertutup.',
     avatar: 'https://randomuser.me/api/portraits/men/3.jpg',
   },
   {
     id: 4,
     name: 'Dewi Lestari',
-    designation: 'Guru',
+    designation: 'Mahasiswi',
     company: 'SMA Negeri 1',
     testimonial:
       'Sudah 2 tahun ngekost disini dan betah banget. Security 24 jam dan ada CCTV, jadi merasa aman terutama untuk cewek.',
@@ -40,10 +40,10 @@ const testimonials = [
   {
     id: 5,
     name: 'Reza Prakasa',
-    designation: 'Wirausaha',
+    designation: 'Karyawan Swasta',
     company: 'Online Shop',
     testimonial:
-      'Kamar mandi dalam dan air lancar. Dapur bersama juga bersih dan lengkap peralatannya. Recommended banget!',
+      'Kamar mandi dalam dan air lancar. Jemuran juga luas, bisa parkir motor depan kamar juga. Recommended banget!',
     avatar: 'https://randomuser.me/api/portraits/men/5.jpg',
   },
   {
@@ -52,14 +52,14 @@ const testimonials = [
     designation: 'Perawat',
     company: 'RS Medika',
     testimonial:
-      'Akses gampang ke mana-mana, banyak angkutan umum. Tiap kamar ada meja dan lemari besar. Pemilik kost sangat pengertian.',
+      'Akses gampang ke mana-mana, deket warteg dan alfamart. Tiap kamar ada lemari dan mini dapur. Pemilik kost sangat pengertian.',
     avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
   },
 ];
 
 export function Testimonial() {
   return (
-    <div className='flex justify-center items-center py-2 px-6'>
+    <div className='flex py-20 justify-center items-center sm:py-2 px-6'>
       <div>
         <h2 className='mb-8 text-4xl font-bold text-center tracking-tight font-roboto'>
           Testimoni

@@ -51,7 +51,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <div className='flex flex-col items-center justify-center h-[700px]'>
+    <div className='flex flex-col items-center py-20 sm:py-0 justify-center min-h-[700px]'>
       <h1 className='text-5xl font-bold text-center tracking-tight font-roboto'>
         Harga & Promo
       </h1>
@@ -59,7 +59,7 @@ export function Pricing() {
         {plans.map((plan) => (
           <div key={plan.name} className='border rounded-lg p-6'>
             <h3 className='text-lg font-medium font-roboto'>{plan.name}</h3>
-            <p className='mt-2 text-2xl line-through font-bold font-roboto'>
+            <p className='mt-2 text-2xl line-through decoration-red-500 font-bold font-roboto'>
               Rp {plan.normal_price}
             </p>
             <p className='mt-2 text-4xl font-bold font-roboto'>

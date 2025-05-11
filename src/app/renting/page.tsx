@@ -21,9 +21,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Rental Property | Your Business Name',
+  title: 'Pondok Kang Dilla | Kost ekslusif ternyaman di Bandung',
   description:
-    'Discover our beautiful rental property with modern amenities and stunning views.',
+    'Pondok Kang Dilla - Kost ekslusif dengan fasilitas lengkap di Bandung, nyaman dan aman',
 };
 
 export default function Renting() {
@@ -85,16 +85,16 @@ export default function Renting() {
           <p className='text-3xl text-white font-medium font-roboto mb-6'>
             Mulai dari 1 jutaan/bulan
           </p>
-          <a
+          <Link
             href='https://wa.me/628156002421?text=Halo%2C%20saya%20akan%20booking%2Fsurvey%20kost.%20Apakah%20masih%20tersedia%3F'
             target='_blank'
             className='bg-white hover:bg-white/90 text-primary font-medium py-3 px-6 rounded-lg shadow-lg transition-all duration-300 inline-flex items-center gap-2 font-roboto'
           >
             <Phone className='h-5 w-5' /> Booking Sekarang
-          </a>
+          </Link>
         </div>
       </section>
-      <section className='flex items-center h-[650px]'>
+      <section className='flex items-center py-20 sm:py-0 min-h-[650px]'>
         <div className='container mx-auto px-4'>
           <h2 className='text-4xl font-bold mb-12 text-center font-roboto'>
             Fasilitas Pondok Kang Dilla
@@ -128,7 +128,7 @@ export default function Renting() {
         <Faq />
       </section>
       <Pricing />
-      <section className='py-16 h-[400px] flex items-center'>
+      <section className='py-16 min-h-[400px] flex items-center'>
         <div className='container mx-auto px-4 text-center'>
           <h2 className='text-3xl font-bold mb-6 font-roboto'>
             Informasi Pembayaran

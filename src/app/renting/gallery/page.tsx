@@ -1,7 +1,9 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Phone } from 'lucide-react';
+
+import { Metadata } from 'next';
+import { ArrowLeft } from 'lucide-react';
+import { Fab } from '~/components/fab';
 
 export const metadata: Metadata = {
   title: 'Galeri Foto | Pondok Kang Dilla',
@@ -129,16 +131,7 @@ export default function Gallery() {
           ))}
         </div>
       </div>
-
-      <div className='fixed bottom-8 right-8'>
-        <Link
-          href='https://wa.me/628156002421?text=Halo%2C%20saya%20akan%20booking%2Fsurvey%20kost.%20Apakah%20masih%20tersedia%3F'
-          target='_blank'
-          className='bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-full shadow-lg transition-all duration-300 inline-flex items-center gap-2 font-roboto'
-        >
-          <Phone className='h-5 w-5' /> Booking Sekarang
-        </Link>
-      </div>
+      <Fab />
     </main>
   );
 }
