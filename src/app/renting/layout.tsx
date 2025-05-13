@@ -3,11 +3,6 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { Footer } from '~/components/footer';
 
-export const metadata: Metadata = {
-  title: 'Rental Property',
-  description: 'Explore our beautiful rental properties',
-};
-
 export default function RentingLayout({
   children,
 }: {
