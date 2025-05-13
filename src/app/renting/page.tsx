@@ -15,15 +15,46 @@ import {
   Shield,
   Sofa,
   CreditCard,
-  Image as ImageIcon,
   Phone,
   MapPin,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kangdilla.vercel.app/renting'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Pondok Kang Dilla | Kost ekslusif ternyaman di Bandung',
   description:
     'Pondok Kang Dilla - Kost ekslusif dengan fasilitas lengkap di Bandung, nyaman dan aman',
+  openGraph: {
+    title: 'https://kangdilla.vercel.app/renting',
+    description:
+      'Pondok Kang Dilla - Kost ekslusif dengan fasilitas lengkap di Bandung, nyaman dan aman',
+    url: '',
+    siteName: 'Pondok Kang Dilla',
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'Pondok Kang Dilla',
+    card: 'summary_large_image',
+  },
+  verification: {
+    google: '',
+    yandex: '',
+  },
 };
 
 export default function Renting() {

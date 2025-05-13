@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import { Metadata } from 'next';
 import { Footer } from '~/components/footer';
-import { DialogMessage } from '~/components/dialog-message';
 
 export const metadata: Metadata = {
   title: 'Rental Property',
