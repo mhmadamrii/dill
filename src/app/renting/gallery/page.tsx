@@ -106,24 +106,23 @@ export default function Gallery() {
           memberikan gambaran tentang kenyamanan yang akan Anda dapatkan.
         </p>
 
-        {/* Masonry Grid Layout */}
         <div className='columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4'>
-          {galleryImages.map((image, index) => (
+          {Array.from({ length: 13 }).map((_, index) => (
             <div
               key={index}
               className='break-inside-avoid rounded-lg overflow-hidden hover:opacity-90 transition-all duration-300 hover:shadow-xl'
             >
               <div className='relative'>
                 <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
+                  src={`/kost${index + 1}.jpeg`}
+                  alt={`${index + 1} alternative`}
+                  width={700}
+                  height={500}
                   className='w-full h-auto'
                 />
                 <div className='absolute inset-0 bg-black/5 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end'>
                   <div className='w-full bg-black/60 text-white p-3'>
-                    <p className='font-roboto text-sm'>{image.alt}</p>
+                    <p className='font-roboto text-sm'>Kost Kang Dilla</p>
                   </div>
                 </div>
               </div>
