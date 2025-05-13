@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     siteName: 'Pondok Kang Dilla',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://kangdilla.vercel.app/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Pondok Kang Dilla Kost Ekslusif',
+      },
+    ],
   },
   robots: {
     index: true,
