@@ -38,12 +38,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://kangdilla.vercel.app/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Pondok Kang Dilla Kost Ekslusif',
-      },
-      {
-        url: 'https://kangdilla.vercel.app/opengraph-image.png',
         width: 400,
         height: 400,
         alt: 'Pondok Kang Dilla Kost Ekslusif',
