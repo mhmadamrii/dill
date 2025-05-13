@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     'Pondok Kang Dilla - Kost ekslusif dengan fasilitas lengkap di Bandung, nyaman dan aman',
   openGraph: {
-    title: 'https://kangdilla.vercel.app/renting',
+    title: 'Kost Ekslusif, nyaman dan aman di Bandung',
     description:
       'Pondok Kang Dilla - Kost ekslusif dengan fasilitas lengkap di Bandung, nyaman dan aman',
     url: '',
