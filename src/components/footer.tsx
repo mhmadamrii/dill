@@ -6,33 +6,6 @@ import {
   TwitterIcon,
 } from 'lucide-react';
 
-const footerLinks = [
-  {
-    title: 'Overview',
-    href: '#',
-  },
-  {
-    title: 'Features',
-    href: '#',
-  },
-  {
-    title: 'Pricing',
-    href: '#',
-  },
-  {
-    title: 'Careers',
-    href: '#',
-  },
-  {
-    title: 'Help',
-    href: '#',
-  },
-  {
-    title: 'Privacy',
-    href: '#',
-  },
-];
-
 export function Footer() {
   return (
     <div className='flex flex-col border-t'>

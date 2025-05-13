@@ -40,7 +40,7 @@ export default function RentingLayout({
               </svg>
               <span>Pondok Kang Dilla</span>
             </Link>
-            <div className='flex items-center gap-6'>
+            <div className='flex items-center gap-2 sm:gap-6'>
               <Link href='/renting/gallery' className='hover:underline'>
                 Gallery
               </Link>

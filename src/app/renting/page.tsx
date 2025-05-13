@@ -148,7 +148,7 @@ export default function Renting() {
           </Link>
         </div>
       </section>
-      <div className='w-full sm:max-w-7xl mx-auto mb-8'>
+      <div className='w-full px-2 sm:px-0 sm:max-w-7xl mx-auto mb-8'>
         <h2 className='text-2xl font-bold mb-6 font-roboto flex items-center gap-2'>
           <MapPin className='h-5 w-5 text-primary' />
           Lokasi Pondok Kang Dilla

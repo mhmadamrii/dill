@@ -55,7 +55,7 @@ export function Pricing() {
       <h1 className='text-5xl font-bold text-center tracking-tight font-roboto'>
         Harga & Promo
       </h1>
-      <div className='mt-12 max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8'>
+      <div className='mt-12 max-w-screen-lg px-2 sm:px-0 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8'>
         {plans.map((plan) => (
           <div key={plan.name} className='border rounded-lg p-6'>
             <h3 className='text-lg font-medium font-roboto'>{plan.name}</h3>
